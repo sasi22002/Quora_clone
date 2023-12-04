@@ -50,14 +50,12 @@ Thumbs.db
 *.wmv
 
 .env
-configuration/development.py
-configuration/production.py
-configuration/uat.py
+
+quora/development.py
+quora/production.py
 db.sqlite3
-apps/masteradmin/migrations/*
-apps/service_provider/migrations/*
-apps/customer/migrations/*
-apps/customer/__init__.py
-apps/masteradmin/__init__.py
-apps/service_provider/__init__.py
-configuration/__init__.py
+masteradmin/__init__.py
+masteradmin/migrations/*
+post/__init__.py
+post/migrations/*
+quora/__init__.py
