@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 import logging
 from django.db.models import Q
-from apps.masteradmin.models import User
+from masteradmin.models import User
 from jwt import decode as jwt_decode
 from django.conf import settings
 from utils.response_message import Message

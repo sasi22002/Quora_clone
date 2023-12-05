@@ -1,13 +1,9 @@
 from django.contrib import admin
-from django.urls import path,include,re_path
-from django.conf.urls import handler404, handler500
-from django.conf import settings
-import json
-from django.conf.urls.static import static
+from django.urls import path,include
 from rest_framework_simplejwt import views as jwt_views
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-
+from utils import authentication
 
 @csrf_exempt
 def not_found_view(request,*args, **kwargs):
@@ -17,10 +13,13 @@ def not_found_view(request,*args, **kwargs):
 urlpatterns = [
         path('admin/', admin.site.urls),
         path('api/', include([
-            path('accounts/', include('masteradmin.urls')),
+            path('admin/', include('masteradmin.urls')),
             path('<path:dummy>/', not_found_view),
+            path('login',authentication.Login.as_view(),name='login'),
+            path('signup',authentication.SignUp.as_view(),name='signup'),
+            path('logout',authentication.Logout.as_view(),name='logout'),
 
-        
+
         ])),
         path('api/token/refresh', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
         path('<path:dummy>/', not_found_view),
