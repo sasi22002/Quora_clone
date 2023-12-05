@@ -89,6 +89,7 @@ INSTALLED_APPS = [
     'post',
     'django_user_agents',
     'corsheaders',
+    'rest_framework'
 
     ]
 
@@ -101,9 +102,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'utils.custom_middleware.LoginRequiredMiddleware',
-    'utils.custom_middleware.ActivityLogMiddleware',
-    'utils.custom_middleware.CustomSessionMiddleware',
+    # 'utils.custom_middleware.LoginRequiredMiddleware',
+    # 'utils.custom_middleware.ActivityLogMiddleware',
+    # 'utils.custom_middleware.CustomSessionMiddleware',
     'django_user_agents.middleware.UserAgentMiddleware',
     
 ]
